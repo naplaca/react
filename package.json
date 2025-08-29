@@ -1,20 +1,30 @@
 {
-  "name": "mantine",
-  "private": true,
+  "name": "naplaca-react",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "test": "turbo run test",
+    "check-types": "turbo run check-types",
+    "pre-commit": "lint-staged",
+    "ci:version": "changeset version",
+    "ci:publish": "changeset publish",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@naplaca/prettier-config": "^1.0.1",
+    "@svitejs/changesets-changelog-github-compact": "^1.2.0",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "prettier": "^3.6.2",
     "turbo": "^2.5.6",
     "typescript": "5.9.2"
   },
-  "packageManager": "pnpm@9.0.0",
+  "prettier": "@naplaca/prettier-config",
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   }
 }

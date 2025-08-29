@@ -1,0 +1,10 @@
+{
+  "extends": "@naplaca/tsconfig/tsconfig.react.json",
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./dist",
+    "allowJs": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "eslint.config.mjs", "global.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -410,6 +410,9 @@ importers:
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@9.34.0(jiti@2.5.1))
+      libphonenumber-js:
+        specifier: ^1.12.15
+        version: 1.12.15
       prettier:
         specifier: ^3.6.2
         version: 3.6.2

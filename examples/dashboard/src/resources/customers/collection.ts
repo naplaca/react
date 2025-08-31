@@ -1,7 +1,7 @@
 import { queryClient } from "#/providers/resources.provider";
 import { createCollection } from "@tanstack/db";
 import { queryCollectionOptions } from "@tanstack/query-db-collection";
-import { api } from "../api";
+// import { api } from "../api";
 import { Customer } from "./schema";
 
 export const customersCollection = createCollection(
@@ -27,25 +27,25 @@ export const customersCollection = createCollection(
       ]);
     },
 
-    onInsert: async ({ transaction }) => {
-      const customer = transaction.mutations.map((m) => m.modified);
-      const data = api.customers.getCustomers;
-      // const data = await api.customers.createCustomer.query();
-      // Returning nothing or { refetch: true } will trigger a refetch
-      // Return { refetch: false } to skip automatic refetch
-    },
+    // onInsert: async ({ transaction }) => {
+    //   const customer = transaction.mutations.map((m) => m.modified);
+    //   const data = api.customers.getCustomers;
+    //   // const data = await api.customers.createCustomer.query();
+    //   // Returning nothing or { refetch: true } will trigger a refetch
+    //   // Return { refetch: false } to skip automatic refetch
+    // },
 
-    onUpdate: async ({ transaction }) => {
-      const updates = transaction.mutations.map((m) => ({
-        id: m.key,
-        changes: m.changes,
-      }));
-      // await api.customers.updateCustomer(updates);
-    },
+    // onUpdate: async ({ transaction }) => {
+    //   const updates = transaction.mutations.map((m) => ({
+    //     id: m.key,
+    //     changes: m.changes,
+    //   }));
+    //   // await api.customers.updateCustomer(updates);
+    // },
 
-    onDelete: async ({ transaction }) => {
-      const ids = transaction.mutations.map((m) => m.key);
-      // await api.customers.deleteCustomer(ids);
-    },
+    // onDelete: async ({ transaction }) => {
+    //   const ids = transaction.mutations.map((m) => m.key);
+    //   // await api.customers.deleteCustomer(ids);
+    // },
   })
 );

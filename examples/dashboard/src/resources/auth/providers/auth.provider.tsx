@@ -29,7 +29,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setUser(null);
   }, []);
 
-  const hasPermission = useCallback((permission: string) => {
+  const hasPermission = useCallback((_permission: string) => {
     // Implement your permission logic here
     return true;
   }, []);

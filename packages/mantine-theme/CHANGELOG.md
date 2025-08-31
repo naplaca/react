@@ -1,5 +1,11 @@
 # @naplaca/mantine-theme
 
+## 1.2.0
+
+### Minor Changes
+
+- Override popover and tabs style ([`acd1fd1`](https://github.com/naplaca/react/commit/acd1fd109a06f7fadfd9fc51f5ec7ea90ad17d02))
+
 ## 1.1.0
 
 ### Minor Changes

@@ -13,3 +13,17 @@
 .naplaca-card-root {
   background-color: var(--mantine-color-body);
 }
+
+.naplaca-tabs-root {
+  &[data-variant="default"] {
+    --tabs-list-border-width: 1px;
+  }
+}
+
+.naplaca-tabs-list {
+  &[data-no-border] {
+    &::before {
+      display: none;
+    }
+  }
+}

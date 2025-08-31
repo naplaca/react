@@ -14,8 +14,10 @@ import inputs from "./inputs";
 import loadingOverlay from "./loading-overlay";
 import menu from "./menu";
 import notification from "./notification";
+import popover from "./popover";
 import ringProgress from "./ring-progress";
 import table from "./table";
+import tabs from "./tabs";
 import tooltip from "./tooltip";
 
 export default {
@@ -35,4 +37,6 @@ export default {
   ...tooltip,
   ...container,
   ...dropzone,
+  ...popover,
+  ...tabs,
 } as Record<string, MantineThemeComponent>;

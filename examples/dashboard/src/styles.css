@@ -9,3 +9,27 @@
 @import "@mantine/spotlight/styles.layer.css";
 @import "@mantine/tiptap/styles.layer.css";
 @import "@naplaca/mantine-theme/theme.css";
+@import "@naplaca/mantine-components/theme";
+
+:root {
+  --mantine-color-light: #e8f0f7;
+  --mantine-color-dark: #0a0f14;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  font-optical-sizing: auto;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: light-dark(var(--mantine-color-light), var(--mantine-color-dark));
+}

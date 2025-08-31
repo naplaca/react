@@ -1,17 +1,18 @@
 import { Devtools } from "#/components/devtools";
-import { ThemeProvider } from "#/providers/theme.provider";
-import { Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
+import type { RouteContext } from "#/contexts/route.context";
+import { BreadcrumbsProvider } from "#/providers/breadcrumbs.provider";
+import { createRootRouteWithContext, Outlet, Scripts } from "@tanstack/react-router";
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<RouteContext>()({
   component: Root,
 });
 
 function Root() {
   return (
     <>
-      <ThemeProvider>
+      <BreadcrumbsProvider>
         <Outlet />
-      </ThemeProvider>
+      </BreadcrumbsProvider>
       <Devtools />
       <Scripts />
     </>

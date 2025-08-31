@@ -9,38 +9,180 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from "./routes/__root";
+import { Route as GuestRouteImport } from "./routes/_guest";
+import { Route as AuthRouteImport } from "./routes/_auth";
 import { Route as IndexRouteImport } from "./routes/index";
+import { Route as GuestRegisterRouteImport } from "./routes/_guest/register";
+import { Route as GuestLoginRouteImport } from "./routes/_guest/login";
+import { Route as GuestForgotPasswordRouteImport } from "./routes/_guest/forgot-password";
+import { Route as AuthResourcesIndexRouteImport } from "./routes/_auth/resources/index";
+import { Route as AuthResourcesCustomersIndexRouteImport } from "./routes/_auth/resources/customers/index";
+import { Route as AuthResourcesCustomersCustomerIdRouteImport } from "./routes/_auth/resources/customers/$customerId";
+import { Route as AuthResourcesCustomersCustomerIdProfileRouteImport } from "./routes/_auth/resources/customers/$customerId.profile";
+import { Route as AuthResourcesCustomersCustomerIdPaymentsRouteImport } from "./routes/_auth/resources/customers/$customerId.payments";
+import { Route as AuthResourcesCustomersCustomerIdInvoicesRouteImport } from "./routes/_auth/resources/customers/$customerId.invoices";
 
+const GuestRoute = GuestRouteImport.update({
+  id: "/_guest",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const AuthRoute = AuthRouteImport.update({
+  id: "/_auth",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const IndexRoute = IndexRouteImport.update({
   id: "/",
   path: "/",
   getParentRoute: () => rootRouteImport,
 } as any);
+const GuestRegisterRoute = GuestRegisterRouteImport.update({
+  id: "/register",
+  path: "/register",
+  getParentRoute: () => GuestRoute,
+} as any);
+const GuestLoginRoute = GuestLoginRouteImport.update({
+  id: "/login",
+  path: "/login",
+  getParentRoute: () => GuestRoute,
+} as any);
+const GuestForgotPasswordRoute = GuestForgotPasswordRouteImport.update({
+  id: "/forgot-password",
+  path: "/forgot-password",
+  getParentRoute: () => GuestRoute,
+} as any);
+const AuthResourcesIndexRoute = AuthResourcesIndexRouteImport.update({
+  id: "/resources/",
+  path: "/resources/",
+  getParentRoute: () => AuthRoute,
+} as any);
+const AuthResourcesCustomersIndexRoute = AuthResourcesCustomersIndexRouteImport.update({
+  id: "/resources/customers/",
+  path: "/resources/customers/",
+  getParentRoute: () => AuthRoute,
+} as any);
+const AuthResourcesCustomersCustomerIdRoute = AuthResourcesCustomersCustomerIdRouteImport.update({
+  id: "/resources/customers/$customerId",
+  path: "/resources/customers/$customerId",
+  getParentRoute: () => AuthRoute,
+} as any);
+const AuthResourcesCustomersCustomerIdProfileRoute = AuthResourcesCustomersCustomerIdProfileRouteImport.update({
+  id: "/profile",
+  path: "/profile",
+  getParentRoute: () => AuthResourcesCustomersCustomerIdRoute,
+} as any);
+const AuthResourcesCustomersCustomerIdPaymentsRoute = AuthResourcesCustomersCustomerIdPaymentsRouteImport.update({
+  id: "/payments",
+  path: "/payments",
+  getParentRoute: () => AuthResourcesCustomersCustomerIdRoute,
+} as any);
+const AuthResourcesCustomersCustomerIdInvoicesRoute = AuthResourcesCustomersCustomerIdInvoicesRouteImport.update({
+  id: "/invoices",
+  path: "/invoices",
+  getParentRoute: () => AuthResourcesCustomersCustomerIdRoute,
+} as any);
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute;
+  "/forgot-password": typeof GuestForgotPasswordRoute;
+  "/login": typeof GuestLoginRoute;
+  "/register": typeof GuestRegisterRoute;
+  "/resources": typeof AuthResourcesIndexRoute;
+  "/resources/customers/$customerId": typeof AuthResourcesCustomersCustomerIdRouteWithChildren;
+  "/resources/customers": typeof AuthResourcesCustomersIndexRoute;
+  "/resources/customers/$customerId/invoices": typeof AuthResourcesCustomersCustomerIdInvoicesRoute;
+  "/resources/customers/$customerId/payments": typeof AuthResourcesCustomersCustomerIdPaymentsRoute;
+  "/resources/customers/$customerId/profile": typeof AuthResourcesCustomersCustomerIdProfileRoute;
 }
 export interface FileRoutesByTo {
   "/": typeof IndexRoute;
+  "/forgot-password": typeof GuestForgotPasswordRoute;
+  "/login": typeof GuestLoginRoute;
+  "/register": typeof GuestRegisterRoute;
+  "/resources": typeof AuthResourcesIndexRoute;
+  "/resources/customers/$customerId": typeof AuthResourcesCustomersCustomerIdRouteWithChildren;
+  "/resources/customers": typeof AuthResourcesCustomersIndexRoute;
+  "/resources/customers/$customerId/invoices": typeof AuthResourcesCustomersCustomerIdInvoicesRoute;
+  "/resources/customers/$customerId/payments": typeof AuthResourcesCustomersCustomerIdPaymentsRoute;
+  "/resources/customers/$customerId/profile": typeof AuthResourcesCustomersCustomerIdProfileRoute;
 }
 export interface FileRoutesById {
   "__root__": typeof rootRouteImport;
   "/": typeof IndexRoute;
+  "/_auth": typeof AuthRouteWithChildren;
+  "/_guest": typeof GuestRouteWithChildren;
+  "/_guest/forgot-password": typeof GuestForgotPasswordRoute;
+  "/_guest/login": typeof GuestLoginRoute;
+  "/_guest/register": typeof GuestRegisterRoute;
+  "/_auth/resources/": typeof AuthResourcesIndexRoute;
+  "/_auth/resources/customers/$customerId": typeof AuthResourcesCustomersCustomerIdRouteWithChildren;
+  "/_auth/resources/customers/": typeof AuthResourcesCustomersIndexRoute;
+  "/_auth/resources/customers/$customerId/invoices": typeof AuthResourcesCustomersCustomerIdInvoicesRoute;
+  "/_auth/resources/customers/$customerId/payments": typeof AuthResourcesCustomersCustomerIdPaymentsRoute;
+  "/_auth/resources/customers/$customerId/profile": typeof AuthResourcesCustomersCustomerIdProfileRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/";
+  fullPaths:
+    | "/"
+    | "/forgot-password"
+    | "/login"
+    | "/register"
+    | "/resources"
+    | "/resources/customers/$customerId"
+    | "/resources/customers"
+    | "/resources/customers/$customerId/invoices"
+    | "/resources/customers/$customerId/payments"
+    | "/resources/customers/$customerId/profile";
   fileRoutesByTo: FileRoutesByTo;
-  to: "/";
-  id: "__root__" | "/";
+  to:
+    | "/"
+    | "/forgot-password"
+    | "/login"
+    | "/register"
+    | "/resources"
+    | "/resources/customers/$customerId"
+    | "/resources/customers"
+    | "/resources/customers/$customerId/invoices"
+    | "/resources/customers/$customerId/payments"
+    | "/resources/customers/$customerId/profile";
+  id:
+    | "__root__"
+    | "/"
+    | "/_auth"
+    | "/_guest"
+    | "/_guest/forgot-password"
+    | "/_guest/login"
+    | "/_guest/register"
+    | "/_auth/resources/"
+    | "/_auth/resources/customers/$customerId"
+    | "/_auth/resources/customers/"
+    | "/_auth/resources/customers/$customerId/invoices"
+    | "/_auth/resources/customers/$customerId/payments"
+    | "/_auth/resources/customers/$customerId/profile";
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
+  AuthRoute: typeof AuthRouteWithChildren;
+  GuestRoute: typeof GuestRouteWithChildren;
 }
 
 declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
+    "/_guest": {
+      id: "/_guest";
+      path: "";
+      fullPath: "";
+      preLoaderRoute: typeof GuestRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/_auth": {
+      id: "/_auth";
+      path: "";
+      fullPath: "";
+      preLoaderRoute: typeof AuthRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/": {
       id: "/";
       path: "/";
@@ -48,10 +190,119 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof IndexRouteImport;
       parentRoute: typeof rootRouteImport;
     };
+    "/_guest/register": {
+      id: "/_guest/register";
+      path: "/register";
+      fullPath: "/register";
+      preLoaderRoute: typeof GuestRegisterRouteImport;
+      parentRoute: typeof GuestRoute;
+    };
+    "/_guest/login": {
+      id: "/_guest/login";
+      path: "/login";
+      fullPath: "/login";
+      preLoaderRoute: typeof GuestLoginRouteImport;
+      parentRoute: typeof GuestRoute;
+    };
+    "/_guest/forgot-password": {
+      id: "/_guest/forgot-password";
+      path: "/forgot-password";
+      fullPath: "/forgot-password";
+      preLoaderRoute: typeof GuestForgotPasswordRouteImport;
+      parentRoute: typeof GuestRoute;
+    };
+    "/_auth/resources/": {
+      id: "/_auth/resources/";
+      path: "/resources";
+      fullPath: "/resources";
+      preLoaderRoute: typeof AuthResourcesIndexRouteImport;
+      parentRoute: typeof AuthRoute;
+    };
+    "/_auth/resources/customers/": {
+      id: "/_auth/resources/customers/";
+      path: "/resources/customers";
+      fullPath: "/resources/customers";
+      preLoaderRoute: typeof AuthResourcesCustomersIndexRouteImport;
+      parentRoute: typeof AuthRoute;
+    };
+    "/_auth/resources/customers/$customerId": {
+      id: "/_auth/resources/customers/$customerId";
+      path: "/resources/customers/$customerId";
+      fullPath: "/resources/customers/$customerId";
+      preLoaderRoute: typeof AuthResourcesCustomersCustomerIdRouteImport;
+      parentRoute: typeof AuthRoute;
+    };
+    "/_auth/resources/customers/$customerId/profile": {
+      id: "/_auth/resources/customers/$customerId/profile";
+      path: "/profile";
+      fullPath: "/resources/customers/$customerId/profile";
+      preLoaderRoute: typeof AuthResourcesCustomersCustomerIdProfileRouteImport;
+      parentRoute: typeof AuthResourcesCustomersCustomerIdRoute;
+    };
+    "/_auth/resources/customers/$customerId/payments": {
+      id: "/_auth/resources/customers/$customerId/payments";
+      path: "/payments";
+      fullPath: "/resources/customers/$customerId/payments";
+      preLoaderRoute: typeof AuthResourcesCustomersCustomerIdPaymentsRouteImport;
+      parentRoute: typeof AuthResourcesCustomersCustomerIdRoute;
+    };
+    "/_auth/resources/customers/$customerId/invoices": {
+      id: "/_auth/resources/customers/$customerId/invoices";
+      path: "/invoices";
+      fullPath: "/resources/customers/$customerId/invoices";
+      preLoaderRoute: typeof AuthResourcesCustomersCustomerIdInvoicesRouteImport;
+      parentRoute: typeof AuthResourcesCustomersCustomerIdRoute;
+    };
   }
 }
 
+interface AuthResourcesCustomersCustomerIdRouteChildren {
+  AuthResourcesCustomersCustomerIdInvoicesRoute: typeof AuthResourcesCustomersCustomerIdInvoicesRoute;
+  AuthResourcesCustomersCustomerIdPaymentsRoute: typeof AuthResourcesCustomersCustomerIdPaymentsRoute;
+  AuthResourcesCustomersCustomerIdProfileRoute: typeof AuthResourcesCustomersCustomerIdProfileRoute;
+}
+
+const AuthResourcesCustomersCustomerIdRouteChildren: AuthResourcesCustomersCustomerIdRouteChildren = {
+  AuthResourcesCustomersCustomerIdInvoicesRoute: AuthResourcesCustomersCustomerIdInvoicesRoute,
+  AuthResourcesCustomersCustomerIdPaymentsRoute: AuthResourcesCustomersCustomerIdPaymentsRoute,
+  AuthResourcesCustomersCustomerIdProfileRoute: AuthResourcesCustomersCustomerIdProfileRoute,
+};
+
+const AuthResourcesCustomersCustomerIdRouteWithChildren = AuthResourcesCustomersCustomerIdRoute._addFileChildren(
+  AuthResourcesCustomersCustomerIdRouteChildren
+);
+
+interface AuthRouteChildren {
+  AuthResourcesIndexRoute: typeof AuthResourcesIndexRoute;
+  AuthResourcesCustomersCustomerIdRoute: typeof AuthResourcesCustomersCustomerIdRouteWithChildren;
+  AuthResourcesCustomersIndexRoute: typeof AuthResourcesCustomersIndexRoute;
+}
+
+const AuthRouteChildren: AuthRouteChildren = {
+  AuthResourcesIndexRoute: AuthResourcesIndexRoute,
+  AuthResourcesCustomersCustomerIdRoute: AuthResourcesCustomersCustomerIdRouteWithChildren,
+  AuthResourcesCustomersIndexRoute: AuthResourcesCustomersIndexRoute,
+};
+
+const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren);
+
+interface GuestRouteChildren {
+  GuestForgotPasswordRoute: typeof GuestForgotPasswordRoute;
+  GuestLoginRoute: typeof GuestLoginRoute;
+  GuestRegisterRoute: typeof GuestRegisterRoute;
+}
+
+const GuestRouteChildren: GuestRouteChildren = {
+  GuestForgotPasswordRoute: GuestForgotPasswordRoute,
+  GuestLoginRoute: GuestLoginRoute,
+  GuestRegisterRoute: GuestRegisterRoute,
+};
+
+const GuestRouteWithChildren = GuestRoute._addFileChildren(GuestRouteChildren);
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthRoute: AuthRouteWithChildren,
+  GuestRoute: GuestRouteWithChildren,
 };
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();

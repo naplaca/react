@@ -1,10 +1,16 @@
+import { api } from "#/resources/api";
+import { useAuth } from "#/resources/auth/providers/auth.provider";
+import { routeTree } from "#/route-tree.gen";
 import { RouterProvider as TanstackRouterProvider, createRouter } from "@tanstack/react-router";
-import { routeTree } from "../route-tree.gen";
 
 // Create a new router instance
 const router = createRouter({
   routeTree,
-  context: {},
+  context: {
+    queryClient: undefined!,
+    auth: undefined!,
+    setBreadcrumbs: undefined!,
+  },
   defaultPreload: "intent",
   scrollRestoration: true,
   defaultStructuralSharing: true,
@@ -21,5 +27,7 @@ declare module "@tanstack/react-router" {
 }
 
 export function RouterProvider() {
-  return <TanstackRouterProvider router={router} />;
+  const auth = useAuth();
+  const queryClient = api.useQueryClient();
+  return <TanstackRouterProvider router={router} context={{ auth, queryClient }} />;
 }

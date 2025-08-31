@@ -1,0 +1,79 @@
+{
+  "name": "@naplaca/react-core",
+  "version": "1.1.0",
+  "description": "NaPlaca react core utilities",
+  "author": "Natael Bernardo <natael.bernardo@hotmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "build": "tsdown --minify",
+    "dev": "tsdown --watch",
+    "lint": "eslint . --ext .ts,.tsx --fix"
+  },
+  "keywords": [
+    "core",
+    "utilities",
+    "naplaca"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naplaca/react"
+  },
+  "bugs": {
+    "url": "https://github.com/naplaca/react/issues"
+  },
+  "homepage": "https://github.com/naplaca/react",
+  "publishConfig": {
+    "provenance": true,
+    "access": "public",
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./utilities": "./dist/utilities/index.mjs",
+      "./utilities/assert": "./dist/utilities/assert.mjs",
+      "./utilities/create-safe-context": "./dist/utilities/create-safe-context.mjs",
+      "./utilities/date": "./dist/utilities/date.mjs",
+      "./utilities/factory": "./dist/utilities/factory.mjs",
+      "./utilities/phone-number": "./dist/utilities/phone-number.mjs",
+      "./utilities/pipe": "./dist/utilities/pipe.mjs",
+      "./package.json": "./package.json"
+    }
+  },
+  "prettier": "@naplaca/prettier-config",
+  "devDependencies": {
+    "@naplaca/eslint-config": "^1.0.0",
+    "@naplaca/prettier-config": "^1.0.1",
+    "@naplaca/tsconfig": "^1.1.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "dayjs": "^1.11.18",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tsdown": "^0.14.2",
+    "typescript": "5.9.2",
+    "zod": "^4.1.5"
+  },
+  "peerDependencies": {
+    "dayjs": "^1.11.18",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "zod": "^4.1.5"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./utilities": "./src/utilities/index.ts",
+    "./utilities/assert": "./src/utilities/assert.ts",
+    "./utilities/create-safe-context": "./src/utilities/create-safe-context.ts",
+    "./utilities/date": "./src/utilities/date.ts",
+    "./utilities/factory": "./src/utilities/factory.ts",
+    "./utilities/phone-number": "./src/utilities/phone-number.ts",
+    "./utilities/pipe": "./src/utilities/pipe.ts",
+    "./package.json": "./package.json"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "name": "@naplaca/mantine-components",
+  "version": "1.1.0",
+  "description": "NaPlaca mantine set of components",
+  "author": "Natael Bernardo <natael.bernardo@hotmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "build": "tsdown --minify",
+    "dev": "tsdown --watch",
+    "lint": "eslint . --ext .ts,.tsx --fix"
+  },
+  "keywords": [
+    "mantine",
+    "components",
+    "naplaca"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naplaca/react"
+  },
+  "bugs": {
+    "url": "https://github.com/naplaca/react/issues"
+  },
+  "homepage": "https://github.com/naplaca/react",
+  "publishConfig": {
+    "provenance": true,
+    "access": "public",
+    "exports": {
+      "./components/breadcrumbs": "./dist/components/breadcrumbs.mjs",
+      "./components/color-scheme-toggler": "./dist/components/color-scheme-toggler.mjs",
+      "./components/sidebar": "./dist/components/sidebar/index.mjs",
+      "./components/sidebar/sidebar-item": "./dist/components/sidebar/sidebar-item.mjs",
+      "./components/sidebar/sidebar-section-title": "./dist/components/sidebar/sidebar-section-title.mjs",
+      "./components/sidebar/sidebar-sub-item": "./dist/components/sidebar/sidebar-sub-item.mjs",
+      "./components/spotlight-search-bar-button": "./dist/components/spotlight-search-bar-button.mjs",
+      "./hooks/use-pathname": "./dist/hooks/use-pathname.mjs",
+      "./registry": "./dist/registry.mjs",
+      "./router-link": "./dist/router-link.mjs",
+      "./theme": "./dist/theme.mjs",
+      "./package.json": "./package.json"
+    }
+  },
+  "prettier": "@naplaca/prettier-config",
+  "devDependencies": {
+    "@mantine/core": "^8.2.7",
+    "@mantine/dates": "^8.2.7",
+    "@mantine/dropzone": "^8.2.7",
+    "@mantine/form": "^8.2.7",
+    "@mantine/spotlight": "^8.2.7",
+    "@naplaca/eslint-config": "^1.0.0",
+    "@naplaca/prettier-config": "^1.0.1",
+    "@naplaca/react-core": "workspace:*",
+    "@naplaca/tsconfig": "^1.1.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "clsx": "^2.1.1",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "tsdown": "^0.14.2",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^8.2.7",
+    "@mantine/dates": "^8.2.7",
+    "@mantine/dropzone": "^8.2.7",
+    "@mantine/form": "^8.2.7",
+    "@mantine/spotlight": "^8.2.7",
+    "@naplaca/react-core": "workspace:*",
+    "clsx": "^2.1.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0"
+  },
+  "exports": {
+    "./components/breadcrumbs": "./src/components/breadcrumbs.tsx",
+    "./components/color-scheme-toggler": "./src/components/color-scheme-toggler.tsx",
+    "./components/sidebar": "./src/components/sidebar/index.tsx",
+    "./components/sidebar/sidebar-item": "./src/components/sidebar/sidebar-item.tsx",
+    "./components/sidebar/sidebar-section-title": "./src/components/sidebar/sidebar-section-title.tsx",
+    "./components/sidebar/sidebar-sub-item": "./src/components/sidebar/sidebar-sub-item.tsx",
+    "./components/spotlight-search-bar-button": "./src/components/spotlight-search-bar-button.tsx",
+    "./hooks/use-pathname": "./src/hooks/use-pathname.ts",
+    "./registry": "./src/registry.ts",
+    "./router-link": "./src/router-link.tsx",
+    "./theme": "./src/theme.css",
+    "./package.json": "./package.json"
+  }
+}

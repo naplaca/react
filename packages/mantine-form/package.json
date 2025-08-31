@@ -1,0 +1,82 @@
+{
+  "name": "@naplaca/mantine-form",
+  "version": "1.1.0",
+  "description": "NaPlaca mantine form components and utilities",
+  "author": "Natael Bernardo <natael.bernardo@hotmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "build": "tsdown --minify",
+    "dev": "tsdown --watch",
+    "lint": "eslint . --ext .ts,.tsx --fix"
+  },
+  "keywords": [
+    "mantine",
+    "form",
+    "naplaca"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naplaca/react"
+  },
+  "bugs": {
+    "url": "https://github.com/naplaca/react/issues"
+  },
+  "homepage": "https://github.com/naplaca/react",
+  "publishConfig": {
+    "provenance": true,
+    "access": "public",
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./checkbox": "./dist/checkbox.mjs",
+      "./date-picker-input": "./dist/date-picker-input.mjs",
+      "./form": "./dist/form.mjs",
+      "./password-input": "./dist/password-input.mjs",
+      "./text-input": "./dist/text-input.mjs",
+      "./package.json": "./package.json"
+    }
+  },
+  "prettier": "@naplaca/prettier-config",
+  "devDependencies": {
+    "@mantine/core": "^8.2.7",
+    "@mantine/dates": "^8.2.7",
+    "@mantine/dropzone": "^8.2.7",
+    "@mantine/form": "^8.2.7",
+    "@naplaca/eslint-config": "^1.0.0",
+    "@naplaca/prettier-config": "^1.0.1",
+    "@naplaca/react-core": "workspace:*",
+    "@naplaca/tsconfig": "^1.1.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react": "^7.37.5",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "tsdown": "^0.14.2",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^8.2.7",
+    "@mantine/dates": "^8.2.7",
+    "@mantine/dropzone": "^8.2.7",
+    "@mantine/form": "^8.2.7",
+    "@naplaca/react-core": "workspace:*",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./checkbox": "./src/checkbox.tsx",
+    "./date-picker-input": "./src/date-picker-input.tsx",
+    "./form": "./src/form.tsx",
+    "./password-input": "./src/password-input.tsx",
+    "./text-input": "./src/text-input.tsx",
+    "./package.json": "./package.json"
+  }
+}

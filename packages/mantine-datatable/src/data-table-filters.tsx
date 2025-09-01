@@ -1,9 +1,20 @@
 "use client";
 
-import { Button, CardSection, Group, Pill, Text, type CardSectionProps, type ComboboxData, type ComboboxItem, type ComboboxItemGroup, type GroupProps } from "@mantine/core";
+import {
+  Button,
+  CardSection,
+  Group,
+  Pill,
+  Text,
+  type CardSectionProps,
+  type ComboboxData,
+  type ComboboxItem,
+  type ComboboxItemGroup,
+  type GroupProps,
+} from "@mantine/core";
 import { assert } from "@naplaca/react-core/utilities/assert";
 import { isDefined } from "@naplaca/react-core/utilities/is";
-import { PiTrashBold as ClearIcon } from 'react-icons/pi';
+import { PiTrashBold as ClearIcon } from "react-icons/pi";
 
 type BaseFilter = {
   label: string;
@@ -99,7 +110,13 @@ function getValueLabel(filter: DataTableFilter) {
   return filter.value;
 }
 
-export function DataTableFilters({ filters, onClear, containerProps, clearLabel = "Clear", ...props }: DataTableFiltersProps) {
+export function DataTableFilters({
+  filters,
+  onClear,
+  containerProps,
+  clearLabel = "Clear",
+  ...props
+}: DataTableFiltersProps) {
   const activeFilters = Object.entries(filters).filter(([, filter]) => isDefined(filter.value));
 
   if (activeFilters.length === 0) {
@@ -120,7 +137,6 @@ export function DataTableFilters({ filters, onClear, containerProps, clearLabel 
           );
         })}
 
-
         {onClear && (
           <Button
             variant="subtle"
@@ -134,5 +150,5 @@ export function DataTableFilters({ filters, onClear, containerProps, clearLabel 
         )}
       </Group>
     </CardSection>
-  )
+  );
 }

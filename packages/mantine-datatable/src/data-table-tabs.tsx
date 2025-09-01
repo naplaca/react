@@ -30,7 +30,7 @@ export const DataTableTabs = forwardRef<HTMLDivElement, DataTableTabsProps>(
         </Tabs>
       </CardSection>
     );
-  },
+  }
 );
 
-DataTableTabs.displayName = "@naplaca/mantine-datatable/DataTableTabs"
+DataTableTabs.displayName = "@naplaca/mantine-datatable/DataTableTabs";

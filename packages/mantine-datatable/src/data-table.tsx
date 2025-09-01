@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { CardSection } from "@mantine/core";
 import { CardTitle } from "@naplaca/mantine-components/components/card-title";

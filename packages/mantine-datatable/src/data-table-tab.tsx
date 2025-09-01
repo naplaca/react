@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Badge, Indicator, isNumberLike, TabsTab, type TabsTabProps } from "@mantine/core";
 import { forwardRef, type ReactNode } from "react";
@@ -36,7 +36,7 @@ export const DataTableTab = forwardRef<HTMLButtonElement, DataTableTabProps>(
         </Indicator>
       </TabsTab>
     );
-  },
+  }
 );
 
-DataTableTab.displayName = "@naplaca/mantine-datatable/DataTableTab"
+DataTableTab.displayName = "@naplaca/mantine-datatable/DataTableTab";

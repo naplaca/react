@@ -13,5 +13,5 @@ function CustomerInvoices() {
     queryData: { params: { customerId } },
   }).data.body;
 
-  return null
+  return <div>Invoices for {customer.name}</div>;
 }

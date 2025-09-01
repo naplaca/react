@@ -1,7 +1,7 @@
 import { useMediaQuery } from "#/hooks/use-media-query";
 import { usePathname } from "#/hooks/use-pathname";
 import { t } from "@lingui/core/macro";
-import { Badge, Group, Select, useMantineTheme, type ComboboxItem } from "@mantine/core";
+import { Badge, Group, Select, type ComboboxItem } from "@mantine/core";
 import { Sidebar, type SidebarProps, type SidebarSectionProps } from "@naplaca/mantine-components/components/sidebar";
 import { useNavigate } from "@tanstack/react-router";
 import { useMemo, type ReactNode } from "react";
@@ -26,7 +26,6 @@ interface CustomerSidebarProps extends Omit<SidebarProps, "sections"> {
 export function CustomerSidebar({ customer, ...props }: CustomerSidebarProps) {
   const isMd = useMediaQuery("md");
   const pathname = usePathname();
-  const theme = useMantineTheme();
   const navigate = useNavigate();
 
   const sections: SidebarSectionProps[] = [
@@ -126,7 +125,7 @@ export function CustomerSidebar({ customer, ...props }: CustomerSidebarProps) {
       allowDeselect={false}
       onChange={(value) => navigate({ to: value ?? "" })}
       renderOption={({ option, checked }) => (
-        <Group justify="space-between" w="100%" c={checked ? theme.primaryColor : "inherit"}>
+        <Group justify="space-between" w="100%" c={checked ? "primary" : "inherit"}>
           <Group gap="xs">
             {metadata[option.value].icon}
             {option.label}

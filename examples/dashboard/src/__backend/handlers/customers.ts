@@ -25,6 +25,16 @@ export default [
     );
   }),
 
+  // GET /customers/metrics
+  http.get(createUrl("/customers/metrics"), () => {
+    return HttpResponse.json({
+      total: database.customers.size,
+      pending: 23,
+      deleted: 10,
+      new: 32,
+    });
+  }),
+
   // GET /customers/:customerId
   http.get(createUrl("/customers/:customerId"), ({ params }) => {
     const customerId = z.uuid().parse(params.customerId);

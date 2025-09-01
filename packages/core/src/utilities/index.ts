@@ -3,6 +3,7 @@ export * from "./boolean";
 export * from "./create-safe-context";
 export * from "./date";
 export * from "./factory";
+export * from "./is";
 export * from "./match";
 export * from "./phone-number";
 export * from "./pipe";

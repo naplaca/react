@@ -1,10 +1,17 @@
 import { createTheme, type MantineThemeOverride } from "@mantine/core";
+import colors from "./colors";
 import components from "./overrides";
 
 export const theme: MantineThemeOverride = createTheme({
-  components,
-  cursorType: "pointer",
+  primaryColor: "primary",
+  primaryShade: { light: 6, dark: 8 },
   fontFamily: "Inter, sans-serif",
+  cursorType: "pointer",
+  colors,
+  defaultRadius: "md",
+  fontSmoothing: true,
+  focusRing: "auto",
+  components,
   breakpoints: {
     "xs": "30em",
     "sm": "40em",

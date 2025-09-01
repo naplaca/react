@@ -28,13 +28,19 @@
     "access": "public",
     "exports": {
       ".": "./dist/index.mjs",
+      "./api": "./dist/api/index.mjs",
+      "./api/pagination": "./dist/api/pagination.mjs",
       "./utilities": "./dist/utilities/index.mjs",
       "./utilities/assert": "./dist/utilities/assert.mjs",
+      "./utilities/boolean": "./dist/utilities/boolean.mjs",
       "./utilities/create-safe-context": "./dist/utilities/create-safe-context.mjs",
       "./utilities/date": "./dist/utilities/date.mjs",
       "./utilities/factory": "./dist/utilities/factory.mjs",
+      "./utilities/is": "./dist/utilities/is.mjs",
+      "./utilities/match": "./dist/utilities/match.mjs",
       "./utilities/phone-number": "./dist/utilities/phone-number.mjs",
       "./utilities/pipe": "./dist/utilities/pipe.mjs",
+      "./utilities/text": "./dist/utilities/text.mjs",
       "./package.json": "./package.json"
     }
   },
@@ -69,13 +75,19 @@
   "types": "./dist/index.d.mts",
   "exports": {
     ".": "./src/index.ts",
+    "./api": "./src/api/index.ts",
+    "./api/pagination": "./src/api/pagination.ts",
     "./utilities": "./src/utilities/index.ts",
     "./utilities/assert": "./src/utilities/assert.ts",
+    "./utilities/boolean": "./src/utilities/boolean.ts",
     "./utilities/create-safe-context": "./src/utilities/create-safe-context.ts",
     "./utilities/date": "./src/utilities/date.ts",
     "./utilities/factory": "./src/utilities/factory.ts",
+    "./utilities/is": "./src/utilities/is.ts",
+    "./utilities/match": "./src/utilities/match.ts",
     "./utilities/phone-number": "./src/utilities/phone-number.ts",
     "./utilities/pipe": "./src/utilities/pipe.ts",
+    "./utilities/text": "./src/utilities/text.ts",
     "./package.json": "./package.json"
   }
 }

@@ -1,5 +1,4 @@
 import { api } from "#/resources/api";
-import { Title } from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_auth/resources/customers/$customerId/invoices")({
@@ -14,5 +13,5 @@ function CustomerInvoices() {
     queryData: { params: { customerId } },
   }).data.body;
 
-  return <Title order={1}>{customer.displayName} invoices</Title>;
+  return null
 }

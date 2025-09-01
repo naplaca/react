@@ -26,3 +26,12 @@ export type CreateCustomerRequest = z.infer<typeof CreateCustomerRequest>;
 export const UpdateCustomerRequest = CreateCustomerRequest.pick({ name: true }).partial();
 
 export type UpdateCustomerRequest = z.infer<typeof UpdateCustomerRequest>;
+
+export const CustomersMetrics = z.object({
+  total: z.number(),
+  pending: z.number(),
+  deleted: z.number(),
+  new: z.number(),
+});
+
+export type CustomersMetrics = z.infer<typeof CustomersMetrics>;

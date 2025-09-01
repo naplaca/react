@@ -1,4 +1,4 @@
-import { Spotlight, type SpotlightActionData } from "@mantine/spotlight";
+import { createSpotlight, Spotlight, type SpotlightActionData } from "@mantine/spotlight";
 import { SpotlightSearchBarButton } from "@naplaca/mantine-components/components/spotlight-search-bar-button";
 import {
   PiFileDuotone,
@@ -6,6 +6,8 @@ import {
   PiSquaresFourDuotone,
   PiMagnifyingGlassBold as SearchIcon,
 } from "react-icons/pi";
+
+export const [searchStore, searchHandlers] = createSpotlight();
 
 export function DashboardSearch() {
   const actions: SpotlightActionData[] = [
@@ -31,11 +33,14 @@ export function DashboardSearch() {
 
   return (
     <SpotlightSearchBarButton
+      handlers={searchHandlers}
       placeholder="Search for feature"
       w={{ base: "fit-content", md: "16rem" }}
       spotlight={
         <Spotlight
+          store={searchStore}
           actions={actions}
+          shortcut={["mod + K"]}
           nothingFound="Nada foi encontrado..."
           highlightQuery
           searchProps={{

@@ -3,41 +3,29 @@ import { DatePickerInput } from "@mantine/dates";
 
 export default {
   DatePickerInput: DatePickerInput.extend({
-    defaultProps: {
-      radius: "md",
-    },
+    defaultProps: {},
   }),
   InputBase: InputBase.extend({
-    defaultProps: {
-      radius: "md",
-    },
+    defaultProps: {},
   }),
   Input: Input.extend({
-    defaultProps: {
-      radius: "md",
-    },
+    defaultProps: {},
   }),
   PasswordInput: PasswordInput.extend({
-    defaultProps: {
-      radius: "md",
-    },
+    defaultProps: {},
   }),
   Fieldset: Fieldset.extend({
     defaultProps: {
       variant: "unstyled",
-      radius: "md",
     },
   }),
   NumberInput: NumberInput.extend({
     defaultProps: {
-      radius: "md",
       thousandSeparator: " ",
       decimalSeparator: ",",
     },
   }),
   Select: Select.extend({
-    defaultProps: {
-      radius: "md",
-    },
+    defaultProps: {},
   }),
 };

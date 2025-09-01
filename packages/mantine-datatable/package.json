@@ -1,0 +1,98 @@
+{
+  "name": "@naplaca/mantine-datatable",
+  "version": "1.0.0",
+  "description": "NaPlaca enhanced mantine datatable",
+  "author": "Natael Bernardo <natael.bernardo@hotmail.com>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "build": "tsdown --minify",
+    "dev": "tsdown --watch",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write"
+  },
+  "keywords": [
+    "mantine",
+    "datatable",
+    "table",
+    "naplaca"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naplaca/react"
+  },
+  "bugs": {
+    "url": "https://github.com/naplaca/react/issues"
+  },
+  "homepage": "https://github.com/naplaca/react",
+  "publishConfig": {
+    "provenance": true,
+    "access": "public",
+    "exports": {
+      ".": "./dist/index.mjs",
+      "./data-table": "./dist/data-table.mjs",
+      "./data-table-container": "./dist/data-table-container.mjs",
+      "./data-table-filters": "./dist/data-table-filters.mjs",
+      "./data-table-multi-select-filter": "./dist/data-table-multi-select-filter.mjs",
+      "./data-table-radio-filter": "./dist/data-table-radio-filter.mjs",
+      "./data-table-select-filter": "./dist/data-table-select-filter.mjs",
+      "./data-table-tab": "./dist/data-table-tab.mjs",
+      "./data-table-tabs": "./dist/data-table-tabs.mjs",
+      "./data-table-text-input-filter": "./dist/data-table-text-input-filter.mjs",
+      "./use-data-table-filters": "./dist/use-data-table-filters.mjs",
+      "./use-data-table-pagination": "./dist/use-data-table-pagination.mjs",
+      "./use-data-table-sort": "./dist/use-data-table-sort.mjs",
+      "./use-data-table-tabs": "./dist/use-data-table-tabs.mjs",
+      "./package.json": "./package.json"
+    }
+  },
+  "prettier": "@naplaca/prettier-config",
+  "devDependencies": {
+    "@mantine/core": "^8.2.7",
+    "@naplaca/eslint-config": "^1.0.0",
+    "@naplaca/mantine-components": "workspace:*",
+    "@naplaca/prettier-config": "^1.0.1",
+    "@naplaca/react-core": "workspace:*",
+    "@naplaca/tsconfig": "^1.1.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.34.0",
+    "eslint-plugin-react": "^7.37.5",
+    "mantine-datatable": "^8.2.0",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "tsdown": "^0.14.2",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^8.2.7",
+    "@naplaca/mantine-components": "workspace:*",
+    "@naplaca/react-core": "workspace:*",
+    "mantine-datatable": "^8.2.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./data-table": "./src/data-table.tsx",
+    "./data-table-container": "./src/data-table-container.tsx",
+    "./data-table-filters": "./src/data-table-filters.tsx",
+    "./data-table-multi-select-filter": "./src/data-table-multi-select-filter.tsx",
+    "./data-table-radio-filter": "./src/data-table-radio-filter.tsx",
+    "./data-table-select-filter": "./src/data-table-select-filter.tsx",
+    "./data-table-tab": "./src/data-table-tab.tsx",
+    "./data-table-tabs": "./src/data-table-tabs.tsx",
+    "./data-table-text-input-filter": "./src/data-table-text-input-filter.tsx",
+    "./use-data-table-filters": "./src/use-data-table-filters.ts",
+    "./use-data-table-pagination": "./src/use-data-table-pagination.ts",
+    "./use-data-table-sort": "./src/use-data-table-sort.ts",
+    "./use-data-table-tabs": "./src/use-data-table-tabs.ts",
+    "./package.json": "./package.json"
+  }
+}

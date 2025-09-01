@@ -6,7 +6,6 @@ export default {
       root: "naplaca-card-root",
     },
     defaultProps: {
-      radius: "md",
       withBorder: true,
     },
   }),

@@ -8,14 +8,12 @@ export interface CardTitleProps extends Omit<CardSectionProps, "size" | "c" | "f
 }
 
 export const CardTitle = forwardRef<HTMLDivElement, CardTitleProps>(
-  ({ title, description, style, actions, withBorder = true, mb = "sm", ...props }, ref) => (
+  ({ title, description, actions, withBorder = true, ...props }, ref) => (
     <CardSection
       ref={ref}
       py="md"
-      mb={mb}
       withBorder={withBorder}
       inheritPadding
-      style={{ ...style, borderTop: "none" }}
       {...props}
     >
       <Group justify="space-between">

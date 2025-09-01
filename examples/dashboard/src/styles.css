@@ -10,6 +10,7 @@
 @import "@mantine/tiptap/styles.layer.css";
 @import "@naplaca/mantine-theme/theme.css";
 @import "@naplaca/mantine-components/theme";
+@import "mantine-datatable/styles.layer.css";
 
 :root {
   --mantine-color-light: #e8f0f7;

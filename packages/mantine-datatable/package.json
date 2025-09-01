@@ -49,6 +49,7 @@
   "prettier": "@naplaca/prettier-config",
   "devDependencies": {
     "@mantine/core": "^8.2.7",
+    "@mantine/hooks": "^8.2.8",
     "@naplaca/eslint-config": "^1.0.0",
     "@naplaca/mantine-components": "workspace:*",
     "@naplaca/prettier-config": "^1.0.1",
@@ -68,6 +69,7 @@
   },
   "peerDependencies": {
     "@mantine/core": "^8.2.7",
+    "@mantine/hooks": "^8.2.8",
     "@naplaca/mantine-components": "workspace:*",
     "@naplaca/react-core": "workspace:*",
     "mantine-datatable": "^8.2.0",
